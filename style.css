@@ -1,0 +1,204 @@
+:root {
+    --background: #f5acca;
+    --text: #615a5a;
+    --width: 640px;
+    --heigh: 64px;
+    --font-size: 28px;
+    --danger: #6b4d5f;
+    --foreground: #fefefe;
+    --border: 1px solid #717171;
+    --textDone: #b2a0ad;
+}
+:focus {
+    outline: 0;
+}
+/* ============================================================ */
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--background);
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    width: 100%;
+    max-width: var(--width);
+}
+.title {
+    font-weight: 600;
+    font-size: 44px;
+    color: rgb(121, 120, 120);
+
+    text-shadow: 4px 4px 4px rgb(154, 124, 124);
+}
+/* ============================================================== */
+.input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: var(--border);
+
+    background-color: var(--foreground);
+    
+}
+.input>input {    
+    display: flex;  
+    flex: 1;
+    height: var(--heigh);
+    font-size: var(--font-size);
+    width: var(--width);
+    border: none;
+}
+.input ::placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ============================================================== */
+.todos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border: var(--border);
+    height: var(--heigh);
+}
+.todo > input[type='checkbox'] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 16px;
+    cursor: pointer;
+    border: 3px solid var(--foreground);
+}
+.todo > input[type='checkbox']:checked {
+    background: #80ee88;
+}
+.todo > input[type='checkbox']:checked ~ h4 {
+    color: var(--textDone);
+    text-decoration: line-through;
+}
+.todo--check {
+    display: flex;
+    align-items: center;
+    margin: 0 16px 0 16px;
+    height: var(--heigh);
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+.todo--marker::before {
+    position: absolute;
+    border-radius: 50%;
+    color: rgb(65, 216, 65);
+    font-size: 40px;
+    margin-right: 100px;
+}  
+.todo--text {
+    display: flex;
+    flex: 1;
+    color: var(--text);
+    font-size: var(--font-size);
+}
+.todo > .todo--remove {
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
+    width: 40px;
+    background: #ea6e99;
+
+}
+
+/* ========================================================== */
+.status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: var(--heigh);
+    box-shadow: 4px 4px 14px rgb(134, 104, 104);
+}
+.status--counter {
+    font-size: 22px;
+    color: var(--danger);
+    margin: 0 16px;
+}
+.status--filter {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+.status--filter > * >input[type='radio'] {
+    display: none;
+}
+.status--filter > .active {
+    border: 1px solid var(--text);
+}
+.status--filter input:checked {
+    border: 1px solid #615a5a;
+}
+.status--filter label {
+    width: 80px;
+    height: 40px;
+    font-size: 22px;
+    background: #947b8a;
+    border-radius: 10px;
+    color: #cfcfcf;
+    border-style: outset;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.status--filter label:hover {
+    background: var(--danger);
+}
+.status--clear {
+    font-size: 22px;
+    color: var(--danger);
+    margin: 0 16px;
+}
+
+.try {
+    position: relative;
+    margin: 20px;
+    padding-left: 28px;
+    line-height: 26px;
+  }
+  
+  .try:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 34px;
+    height: 14px;
+    border-right: 4px solid rgb(113, 113, 113);
+    border-top: 4px solid rgb(128, 128, 128);
+    transform: rotate(135deg);
+  }
+/* =============================================================== */
+
+
+
+
+
+

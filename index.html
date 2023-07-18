@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="/favicon.icon">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <header>
+            <div class="title">TODOs</div>
+        </header>
+        
+        <main>
+        <div class="input">
+            <span class="try"></span>
+            <input id="input" type="text" placeholder="What nees to be done">
+        </div>
+
+        <div id="todos" class="todos">
+
+            <div class="todo">
+                <input type="checkbox" class="todo--check"/>
+                <h4 class="todo--text">Buy bread</h4>
+                <input type="checkbox" class="todo--remove"/>
+            </div>
+
+            <div class="todo done">
+                <input type="checkbox" class="todo--check"/>
+                <h4 class="todo--text">Walk with the dog</h4> 
+                <input type="checkbox" class="todo--remove"/>
+            </div>
+
+            <div class="todo">
+                <input type="checkbox" class="todo--check"/>
+                <h4 class="todo--text">Beak The cake</h4>
+                <input type="checkbox" class="todo--remove"/>
+            </div>
+
+        </div>
+
+
+        <div class="status">
+            <div id="counter" class="status--counter">2 item left</div>
+
+            <div id="filter" class="status--filter" id="filter">
+                <label> All <input type="radio" name="filter"></label>
+                <label> Active <input value="active" type="radio" name="filter" checked></label>
+                <label> Done <input value="done" type="radio" name="filter"></label>
+            </div>
+
+            <div id="clear" class="status--clear">Clear completed</div>
+        </div>
+
+        </main>
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
