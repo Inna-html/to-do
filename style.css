@@ -61,6 +61,13 @@ body {
     align-items: center;
 }
 /* ============================================================== */
+
+.todos[data-filter='done'] > .todo:not(:has(input:checked)) {
+    display: none;
+}
+.todos[data-filter='active'] > .todo:has(input:checked) {
+    display: none;
+}
 .todos {
     display: flex;
     flex-direction: column;
@@ -118,11 +125,17 @@ body {
     display: flex;
     align-items: center;
     margin: 0 16px;
-    width: 40px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--foreground);
+    border-radius: 10px;
+    justify-content: center;
+    color: var(--foreground);
     background: #ea6e99;
-
 }
-
+.todo--remove:focus {
+    content: 'X'
+}
 /* ========================================================== */
 .status {
     display: flex;

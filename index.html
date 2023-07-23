@@ -19,38 +19,37 @@
         <main>
         <div class="input">
             <span class="try"></span>
-            <input id="input" type="text" placeholder="What nees to be done">
+            <input id="input" type="text" placeholder="What needs to be done">
         </div>
 
-        <div id="todos" class="todos">
+        <div id="todos" class="todos" data-filter="active">
 
             <div class="todo">
                 <input type="checkbox" class="todo--check"/>
                 <h4 class="todo--text">Buy bread</h4>
-                <input type="checkbox" class="todo--remove"/>
+                <label type="checkbox" class="todo--remove"></label>
             </div>
 
             <div class="todo done">
-                <input type="checkbox" class="todo--check"/>
+                <input type="checkbox" class="todo--check" checked/>
                 <h4 class="todo--text">Walk with the dog</h4> 
-                <input type="checkbox" class="todo--remove"/>
+                <label type="checkbox" class="todo--remove"></label>
             </div>
 
             <div class="todo">
                 <input type="checkbox" class="todo--check"/>
                 <h4 class="todo--text">Beak The cake</h4>
-                <input type="checkbox" class="todo--remove"/>
+                <label type="checkbox" class="todo--remove"></llabel>
             </div>
 
         </div>
 
-
         <div class="status">
-            <div id="counter" class="status--counter">2 item left</div>
+            <div id="counter" class="status--counter"> item</div>
 
-            <div id="filter" class="status--filter" id="filter">
-                <label> All <input type="radio" name="filter"></label>
-                <label> Active <input value="active" type="radio" name="filter" checked></label>
+            <div id="filter" class="status--filter">
+                <label> All <input type="radio" name="filter" checked></label>
+                <label> Active <input value="active" type="radio" name="filter"></label>
                 <label> Done <input value="done" type="radio" name="filter"></label>
             </div>
 
@@ -65,3 +64,19 @@
     <script src="index.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    
+    
+    
+-->
