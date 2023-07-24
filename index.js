@@ -12,18 +12,18 @@ const saveTodos = () => {
         list.unshift({
             done: todo.children[0].checked,
             text: todo.children[1].textContent,
-        })
+        });
     }
     localStorage.setItem('todos', JSON.stringify(list));
 }
 
 const loadTodos = () => {
-    // todosElement.innerHTML = '';
+    todosElement.innerHTML = '';
     const list = JSON.parse(localStorage.getItem('todos') || '');
     for (const {done, text} of list) {
         createTodo(text, done);
-    };
-}
+    }
+};
 
 const deleteToDo = (removeElement) => {
     const todoElement = removeElement.parentNode;
@@ -37,34 +37,34 @@ const createTodo = (text, done = false) => {
         'afterbegin', 
         `<div class="todo">
             <input type="checkbox" class="todo--check" ${done ? 'checked' : ''} />
-            <h4 class="todo--text">${event.target.value}</h4>
+            <h4 class="todo--text">${text}</h4>
             <input type="checkbox" class="todo--remove"/>
         </div>`
-    );
+    );  //vent.target.value
     updateCounter();
     saveTodos();
     return todosElement.childNodes[0];
-}
-
-const updateCounter = () => {
-    const count = todosElement.querySelectorAll(' .todo:not(input:checked)  ').length;
-    counterElement.textContent = `${count} item`;
-    saveTodos();
 };
 
+const updateCounter = () => {
+    const count = todosElement.querySelectorAll('.todo:not(:has(input:checked)').length;
+    counterElement.textContent = `${count} item left`;
+    saveTodos();   
+};                             
+
 updateCounter();
-/*
+
 const clearCompletede = () => {
-   const elementsToRemoves = todosElement.querySelectorAll('input:checked');
-    for (const elementToRemove of elementsToRemoves) { 
+   const elementToRemoves = todosElement.querySelectorAll('input:checked').length;
+    for (const elementToRemove of elementToRemoves) { 
         todosElement.removeChild(elementToRemove);
     } 
     saveTodos();
 };
-clearCompletede();
-*/
+ ///  clearCompletede();
+
 //events
-loadTodos();
+/// loadTodos();
 
 todosElement.addEventListener('click', (event) => {
     if (event.target.classList.contains('todo--remove')) {
@@ -75,7 +75,7 @@ todosElement.addEventListener('click', (event) => {
 })
 
 inputElement.addEventListener('keyup', (event) => {
-    // event.key === 'Enter'
+    event.key === 'Enter'
     if(event.key === 'Enter') {
         if (event.target.value !== '') {
             createTodo(event.target.value);
@@ -85,14 +85,14 @@ inputElement.addEventListener('keyup', (event) => {
 });
 
 filterElement.addEventListener('click', (event) => {
-    if (event.target.nodeName === 'input') {
+    if (event.target.nodeName === 'filter') {
+        console.log(filter);
         todosElement.dataset.filter = event.target.value  
-    }
-
         
+    }
 })
 
-// clearElement.addEventListener('click', clearCompletede);
+clearElement.addEventListener('click', clearCompletede);
 
 
 
@@ -126,8 +126,4 @@ const addTodo = (parts, ...vars) => {
 }
 
 */
-
-
-
-
 
