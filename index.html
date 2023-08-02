@@ -5,59 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
-
-    <link rel="shortcut icon" href="/favicon.icon">
 </head>
 <body>
     
     <div class="wrapper">
 
+        <!--  =============== header ================================ -->
+
         <header>
             <div class="title">TODOs</div>
         </header>
-        
+
+        <!-- ================ main ================================== -->
+
         <main>
         <div class="input">
             <span class="try"></span>
-            <input id="input" type="text" placeholder="What needs to be done">
+            <input id="input" type="text" maxlength="120" class="textarea__item" placeholder="What needs to be done">
         </div>
 
-        <div id="todos" class="todos" data-filter="active">
+        <div class="textarea__counter"> ღ ~<span></span>~ characters left ღ </div>
 
-            <div class="todo">
-                <input type="checkbox" class="todo--check"/>
-                <h4 class="todo--text">Buy bread</h4>
-                <label type="checkbox" class="todo--remove"></label>
-            </div>
 
-            <div class="todo done">
-                <input type="checkbox" class="todo--check" checked/>
-                <h4 class="todo--text">Walk with the dog</h4> 
-                <label type="checkbox" class="todo--remove"></label>
-            </div>
-
-            <div class="todo">
-                <input type="checkbox" class="todo--check"/>
-                <h4 class="todo--text">Beak The cake</h4>
-                <label type="checkbox" class="todo--remove"></llabel>
-            </div>
-
+        <div id="todos" class="todos" data-filter="">
         </div>
 
         <div class="status">
-            <div id="counter" class="status--counter"> item</div>
+            <div id="counter" class="status--counter"> item left </div>
 
             <div id="filter" class="status--filter">
-                <label> All <input type="radio" name="filter" checked></label>
+                <label> All <input type="radio" name="filter" checked ></label>
                 <label> Active <input value="active" type="radio" name="filter"></label>
                 <label> Done <input value="done" type="radio" name="filter"></label>
             </div>
 
             <div id="clear" class="status--clear">Clear completed</div>
+            
         </div>
 
         </main>
-
 
     </div>
 
@@ -65,18 +51,3 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-    
-    
-    
--->

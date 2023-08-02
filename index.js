@@ -1,11 +1,11 @@
-// elements
+// elements  ==============================================================================================
 const  inputElement = document.getElementById('input');
 const  todosElement = document.getElementById('todos');
 const  counterElement = document.getElementById('counter');
 const  filterElement = document.getElementById('filter');
 const  clearElement = document.getElementById('clear');
 
-// implementation 
+// implementation  ===========================================================================================
 const saveTodos = () => {
     const list = [];
     for (const todo of  todosElement.querySelectorAll('.todo')) {
@@ -40,7 +40,7 @@ const createTodo = (text, done = false) => {
             <h4 class="todo--text">${text}</h4>
             <input type="checkbox" class="todo--remove"/>
         </div>`
-    );  //vent.target.value
+    );  //     ${event.target.value} вместо ${text}
     updateCounter();
     saveTodos();
     return todosElement.childNodes[0];
@@ -48,23 +48,22 @@ const createTodo = (text, done = false) => {
 
 const updateCounter = () => {
     const count = todosElement.querySelectorAll('.todo:not(:has(input:checked)').length;
-    counterElement.textContent = `${count} item left`;
-    saveTodos();   
+    counterElement.textContent = `${count} item left`; 
 };                             
 
 updateCounter();
 
-const clearCompletede = () => {
-   const elementToRemoves = todosElement.querySelectorAll('input:checked').length;
-    for (const elementToRemove of elementToRemoves) { 
-        todosElement.removeChild(elementToRemove);
+const clearCompleted = () => {
+   const elementsToRemove = todosElement.querySelectorAll('.todo:has(input:checked)');
+    for(let el of elementsToRemove) {
+        todosElement.removeChild(el);
     } 
     saveTodos();
 };
- ///  clearCompletede();
 
-//events
-/// loadTodos();
+loadTodos();
+
+//events   ====================================================================================================
 
 todosElement.addEventListener('click', (event) => {
     if (event.target.classList.contains('todo--remove')) {
@@ -84,46 +83,37 @@ inputElement.addEventListener('keyup', (event) => {
     }
 });
 
-filterElement.addEventListener('click', (event) => {
-    if (event.target.nodeName === 'filter') {
-        console.log(filter);
-        todosElement.dataset.filter = event.target.value  
-        
+filterElement.addEventListener('change', (event) => {
+    todosElement.dataset.filter = event.target.value;
+  });
+
+clearElement.addEventListener('click', clearCompleted); 
+
+/* ============ counter of input ============================================================================ */ 
+
+const txtItem = document.querySelector ('.textarea__item');
+const txtItemLimit = txtItem.getAttribute('maxlength');
+const txtCounter = document.querySelector ('.textarea__counter span');
+txtCounter.innerHTML = txtItemLimit;
+
+txtItem.addEventListener('input', txtSetCounter);
+
+function txtSetCounter() {
+	const txtCounterResult = txtItemLimit - txtItem.value.length;
+	txtCounter.innerHTML = txtCounterResult;
+
+
+    txtItem.addEventListener('keyup', (event) => {
+        event.key === 'Enter'
+        if(event.key === 'Enter') {
+                txtCounter.innerHTML = txtItemLimit;
+            }
+        })
     }
-})
+        
 
-clearElement.addEventListener('click', clearCompletede);
-
-
+// #############################################################################################################################################################
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const addTodo = (parts, ...vars) => {
-    const html = parts.reduce((result, parts, index) => {
-        console.log(result, parts, index);
-        return result + vars[index] + parts;
-    })
-    todosElement.insertAdjacentHTML('afterbegin', html);
-    return todosElement.childNodes[0];
-}
-
-*/
 

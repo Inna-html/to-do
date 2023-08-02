@@ -1,9 +1,9 @@
 :root {
-    --background: #ebafaf;
+    --background: #ceaeae;
     --text: #615a5a;
     --width: 640px;
-    --heigh: 64px;
-    --font-size: 28px;
+    --heigh: 110px;
+    --font-size: 26px;
     --danger: #6b4d5f;
     --foreground: #fefefe;
     --border: 1px solid #717171;
@@ -12,6 +12,7 @@
 :focus {
     outline: 0;
 }
+
 /* ============================================================ */
 body {
     display: flex;
@@ -26,6 +27,7 @@ body {
     align-items: center;
     background-color: var(--background);
     width: 100%;
+    height: 100%;
     max-width: var(--width);
 }
 .title {
@@ -35,6 +37,7 @@ body {
 
     text-shadow: 4px 4px 4px rgb(154, 124, 124);
 }
+
 /* ============================================================== */
 .input {
     width: 100%;
@@ -60,8 +63,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* ============================================================== */
 
+/* ============================================================== */
 .todos[data-filter='done'] > .todo:not(:has(input:checked)) {
     display: none;
 }
@@ -71,7 +74,7 @@ body {
 .todos {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    height: 100%;
 }
 .todo {
     display: flex;
@@ -80,8 +83,10 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    height: 100%;
     border: var(--border);
     height: var(--heigh);
+
 }
 .todo > input[type='checkbox'] {
     appearance: none;
@@ -120,6 +125,11 @@ body {
     flex: 1;
     color: var(--text);
     font-size: var(--font-size);
+    justify-content: left;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
 }
 .todo > .todo--remove {
     display: flex;
@@ -133,9 +143,7 @@ body {
     color: var(--foreground);
     background: #ea6e99;
 }
-.todo--remove:focus {
-    content: 'X'
-}
+
 /* ========================================================== */
 .status {
     display: flex;
@@ -208,10 +216,22 @@ body {
     border-top: 4px solid rgb(128, 128, 128);
     transform: rotate(135deg);
   }
+  
 /* =============================================================== */
 
+.textarea__counter {
+    display: flex;
+    justify-content: center;
+    color: var(--foreground);
+    font-size: 24px;
+    font-weight: 900;
+}
 
-
-
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
