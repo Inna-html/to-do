@@ -2,7 +2,7 @@
     --background: #ceaeae;
     --text: #615a5a;
     --width: 640px;
-    --heigh: 110px;
+    --heigh: 120px;
     --font-size: 26px;
     --danger: #6b4d5f;
     --foreground: #ffffff;
@@ -243,7 +243,7 @@ span {
 @media (max-width: 768px) {
     :root {
         --width: 80%;
-        --heigh: 90px;
+        --heigh: 120px;
         --font-size: 22px;
     }
 
@@ -338,7 +338,7 @@ span {
 @media (max-width: 350px) {
     :root {
         --width: 70%;
-        --heigh: 100px;
+        --heigh: 120px;
         --font-size: 14px;
     }
 
