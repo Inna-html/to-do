@@ -5,7 +5,7 @@
     --heigh: 110px;
     --font-size: 26px;
     --danger: #6b4d5f;
-    --foreground: #fefefe;
+    --foreground: #ffffff;
     --border: 1px solid #717171;
     --textDone: #b2a0ad;
 }
@@ -62,6 +62,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sub_btn {
+    display: none;
 }
 
 /* ============================================================== */
@@ -233,5 +237,279 @@ span {
     align-items: center;
     text-align: center;
 }
+/* ######################################################################################## */
+/* ######## mobile version ############################################### */
 
+@media (max-width: 660px) {
+    :root {
+        --width: 400px;
+        --heigh: 80px;
+        --font-size: 22px;
+    }
+
+.wrapper {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+
+/* ==== btn ========================================================== */
+
+.sub_btn {
+    width: 80px;
+    height: 50px;
+    font-size: 22px;
+    background: #947b8a;
+    border-radius: 10px;
+    color: #cfcfcf;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    border: outset;
+}
+.sub_btn:hover {
+    background: var(--danger); 
+}
+
+/* ============================================================== */
+.todo {
+    height: var(--heigh);
+}
+.todo--check {
+    height: var(--heigh);
+}
+.todo--text {
+    font-size: var(--font-size);
+}
+/* ========================================================== */
+.status {
+    height: var(--heigh);
+}
+
+.status--filter label {
+    width: 70px;
+    height: 40px;
+    font-size: 22px;
+}
+
+.status--clear {
+    font-size: 22px;
+}
+
+.try {
+    position: relative;
+    margin: 20px;
+    padding-left: 20px;
+    line-height: 22px;
+  }
+  
+  .try:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 26px;
+    height: 14px;
+    border-right: 4px solid rgb(113, 113, 113);
+    border-top: 4px solid rgb(128, 128, 128);
+    transform: rotate(135deg);
+  }
+  
+/* =============================================================== */
+
+.textarea__counter {
+
+    font-size: 22px;
+    font-weight: 900;
+}
+}
+
+/* ################################################################################### */
+/* ################################################################################### */
+
+@media (max-width: 768px) {
+    :root {
+        --width: 80%;
+        --heigh: 90px;
+        --font-size: 22px;
+    }
+
+.wrapper {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+
+/* ==== btn ========================================================== */
+
+.sub_btn {
+    width: 80px;
+    height: 50px;
+    font-size: 22px;
+    background: #947b8a;
+    border-radius: 10px;
+    color: #cfcfcf;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    border: outset;
+}
+.sub_btn:hover {
+    background: var(--danger); 
+}
+
+/* ============================================================== */
+.todo {
+    height: var(--heigh);
+}
+.todo--check {
+    height: var(--heigh);
+}
+.todo--text {
+    font-size: var(--font-size);
+}
+/* ========================================================== */
+.status {
+    height: var(--heigh);
+}
+.status--counter {
+    font-size: 22px;
+}
+
+.status--filter label {
+    width: 70px;
+    height: 40px;
+    font-size: 22px;
+}
+
+.status--clear {
+    font-size: 22px;
+}
+
+.try {
+    position: relative;
+    margin: 20px;
+    padding-left: 20px;
+    line-height: 22px;
+  }
+  
+  .try:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 26px;
+    height: 14px;
+    border-right: 4px solid rgb(113, 113, 113);
+    border-top: 4px solid rgb(128, 128, 128);
+    transform: rotate(135deg);
+  }
+  
+/* =============================================================== */
+
+.textarea__counter {
+
+    font-size: 22px;
+    font-weight: 900;
+}
+}
+
+/* ################################################################################### */
+/* ################################################################################### */
+/* ################################################################################### */
+
+
+@media (max-width: 350px) {
+    :root {
+        --width: 70%;
+        --heigh: 100px;
+        --font-size: 14px;
+    }
+
+.wrapper {
+    max-width: 340px;
+}
+
+/* ==== btn ========================================================== */
+
+.sub_btn {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.sub_btn:hover {
+    background: var(--danger); 
+}
+
+/* ============================================================== */
+.todo {
+    height: var(--heigh);
+}
+.todo--check {
+    height: var(--heigh);
+}
+.todo--text {
+    font-size: var(--font-size);
+}
+/* ========================================================== */
+.status {
+    height: var(--heigh);
+}
+.status--counter {
+    font-size: 14px;
+}
+
+.status--filter label {
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.status--clear {
+    font-size: 14px;
+}
+
+.try {
+    position: relative;
+    margin: 20px;
+    padding-left: 10px;
+    line-height: 20px;
+  }
+  
+  .try:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 18px;
+    height: 14px;
+    border-right: 4px solid rgb(113, 113, 113);
+    border-top: 4px solid rgb(128, 128, 128);
+    transform: rotate(135deg);
+  }
+  
+/* =============================================================== */
+
+.textarea__counter {
+    font-size: 14px;
+}
+}
+
+/* ################################################################################### */
+/* ################################################################################### */
+/* ################################################################################### */
 

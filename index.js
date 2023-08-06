@@ -5,6 +5,8 @@ const  counterElement = document.getElementById('counter');
 const  filterElement = document.getElementById('filter');
 const  clearElement = document.getElementById('clear');
 
+const subBtn = document.querySelector('.sub_btn');
+
 // implementation  ===========================================================================================
 const saveTodos = () => {
     const list = [];
@@ -97,23 +99,37 @@ const txtCounter = document.querySelector ('.textarea__counter span');
 txtCounter.innerHTML = txtItemLimit;
 
 txtItem.addEventListener('input', txtSetCounter);
+txtItem.addEventListener('click', txtSetCounter);
+
 
 function txtSetCounter() {
 	const txtCounterResult = txtItemLimit - txtItem.value.length;
 	txtCounter.innerHTML = txtCounterResult;
 
-
     txtItem.addEventListener('keyup', (event) => {
         event.key === 'Enter'
         if(event.key === 'Enter') {
-                txtCounter.innerHTML = txtItemLimit;
+            txtCounter.innerHTML = txtItemLimit;
+        }
+        })
+
+    subBtn.addEventListener('click', (event) => {
+        event.target === subBtn
+        if (event.target === subBtn) {
+            txtCounter.innerHTML = txtItemLimit;
             }
         })
-    }
-        
+}
 
-// #############################################################################################################################################################
+// ########### mobile version ################################################################################### */
 
-
-
+subBtn.addEventListener("click", (e) => {
+    e.target === subBtn 
+        if (e.target === subBtn) {
+            if (inputElement.value !== '') {
+                createTodo(inputElement.value);
+                inputElement.value = '';
+            }
+        }
+    });
 
