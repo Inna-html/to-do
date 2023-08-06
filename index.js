@@ -21,7 +21,7 @@ const saveTodos = () => {
 
 const loadTodos = () => {
     todosElement.innerHTML = '';
-    const list = JSON.parse(localStorage.getItem('todos') || '');
+    const list = JSON.parse(localStorage.getItem('todos'));
     for (const {done, text} of list) {
         createTodo(text, done);
     }
